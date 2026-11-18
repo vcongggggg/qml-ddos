@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+env/
+
+# Large raw datasets (> 100MB exceeds GitHub limits)
+dataset/CICDDoS2019/
+dataset/tr_day_syn.csv
+dataset/test_day_syn.csv
+
+# Keep sample benchmark datasets:
+# dataset/tr_day_syn_small.csv
+# dataset/test_day_syn_small.csv
+# dataset/tr_day_syn_tiny.csv
+# dataset/test_day_syn_tiny.csv
+
+# System files
+desktop.ini
+.DS_Store
+Thumbs.db

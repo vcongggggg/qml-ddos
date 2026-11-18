@@ -1,0 +1,11 @@
+﻿Mô hình,Họ giải thuật,Tập dữ liệu,Độ chính xác (Acc),F1-Score,Thời gian Huấn luyện (s),Thời gian Suy luận (s),Ghi chú
+Classical SVM,Classical ML,FULL (100.000 mẫu),0.9947,0.985,0.19,0.05,"Mô hình cổ điển chạy nhanh nhất, chính xác cao nhất"
+Classical ANN (MLP),Classical ML,FULL (100.000 mẫu),0.9941,0.98,4.31,0.39,Mạng nơ-ron sâu 8-8-16-8-1
+QSVM (Angle Embedding),Quantum SVM,SMALL (1.000 mẫu),0.99,0.97,1265.59,1576.28,Mô hình lượng tử xuất sắc nhất của bài báo
+QSVM (Amplitude Embedding),Quantum SVM,SMALL (1.000 mẫu),0.97,0.91,4432.02,5502.47,Mạch mã hóa biên độ 3 Qubit
+QSVM (ZZ Feature Map),Quantum SVM,SMALL (1.000 mẫu),0.97,0.9,18115.92,23312.32,Thời gian tính toán lâu nhất (hơn 5 giờ)
+QNN (Two-Local + Angle),Quantum NN (VQC),SMALL (1.000 mẫu),0.97,0.9,978.96,6.94,Mạng nơ-ron biến phân 8 Qubit
+QNN (Tree Tensor + Angle),Quantum NN (VQC),SMALL (1.000 mẫu),0.97,0.9,3607.15,8.78,Mạng Tensor dạng cây
+QNN (Two-Local + ZZ Map),Quantum NN (VQC),SMALL (1.000 mẫu),0.92,0.83,2409.97,27.09,Bị suy giảm độ chính xác do nhiễu cổng CNOT
+QNN (Tree Tensor + ZZ Map),Quantum NN (VQC),SMALL (1.000 mẫu),0.92,0.83,2795.1,26.24,Cấu trúc cây kết hợp ZZ Map
+QNN (Two-Local + Amplitude),Quantum NN (VQC),SMALL (1.000 mẫu),0.43,0.3,125.96,6.13,"Mô hình thất bại hoàn toàn, không hội tụ"
