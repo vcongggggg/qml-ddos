@@ -1,0 +1,9 @@
+﻿Kiến trúc Mạch,Loại Mô hình,Số Qubit,Cổng Nhúng (Feature Map),Số cổng 2-Qubit (CNOT/CZ),Số tham số huấn luyện (Theta),Độ sâu mạch (Circuit Depth),Phép đo đầu ra
+QSVM - Angle Embedding Kernel,Quantum Kernel (QSVM),8,8 cổng RX(x_i) + 8 cổng RX†(z_i),0,0,2,Xác suất P(|00000000>) = |<psi(x)|psi(z)>|^2
+QSVM - Amplitude Embedding Kernel,Quantum Kernel (QSVM),3,MottonenStatePreparation (2^3 = 8 biên độ),14,0,18,Xác suất P(|000>) = |<psi(x)|psi(z)>|^2
+QSVM - ZZ Feature Map Kernel,Quantum Kernel (QSVM),8,8 H + 8 RZ + 28 cặp (CZ - RZ - CZ) x 2 (Adjoint),112,0,88,Xác suất P(|00000000>) = |<psi(x)|psi(z)>|^2
+QNN - Two-Local + Angle Embedding,Variational QNN (VQC),8,8 cổng RX(x_i),7,16,10,Kỳ vọng <q0 | M | q0> với M = |0><0|
+QNN - Tree-Tensor (TTN) + Angle Embedding,Variational QNN (VQC),8,8 cổng RX(x_i),7,15,8,Kỳ vọng <q0 | M | q0> với M = |0><0|
+QNN - Two-Local + ZZ Feature Map,Variational QNN (VQC),8,8 H + 8 RZ + 28 cặp (CZ - RZ - CZ),63,16,52,Kỳ vọng <q0 | M | q0> với M = |0><0|
+QNN - Tree-Tensor (TTN) + ZZ Feature Map,Variational QNN (VQC),8,8 H + 8 RZ + 28 cặp (CZ - RZ - CZ),63,15,50,Kỳ vọng <q0 | M | q0> với M = |0><0|
+QNN - Two-Local + Amplitude (3-Qubit / 4-Qubit),Variational QNN (VQC),3,MottonenStatePreparation (Chuẩn hóa L2),9,6,14,Kỳ vọng <q0 | M | q0> (Dính Barren Plateaus)

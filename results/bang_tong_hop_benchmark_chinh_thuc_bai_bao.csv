@@ -1,11 +1,13 @@
-﻿Mô hình,Họ giải thuật,Tập dữ liệu,Độ chính xác (Acc),F1-Score,Thời gian Huấn luyện (s),Thời gian Suy luận (s),Ghi chú
-Classical SVM,Classical ML,FULL (100.000 mẫu),0.9947,0.985,0.19,0.05,"Mô hình cổ điển chạy nhanh nhất, chính xác cao nhất"
-Classical ANN (MLP),Classical ML,FULL (100.000 mẫu),0.9941,0.98,4.31,0.39,Mạng nơ-ron sâu 8-8-16-8-1
-QSVM (Angle Embedding),Quantum SVM,SMALL (1.000 mẫu),0.99,0.97,1265.59,1576.28,Mô hình lượng tử xuất sắc nhất của bài báo
-QSVM (Amplitude Embedding),Quantum SVM,SMALL (1.000 mẫu),0.97,0.91,4432.02,5502.47,Mạch mã hóa biên độ 3 Qubit
-QSVM (ZZ Feature Map),Quantum SVM,SMALL (1.000 mẫu),0.97,0.9,18115.92,23312.32,Thời gian tính toán lâu nhất (hơn 5 giờ)
-QNN (Two-Local + Angle),Quantum NN (VQC),SMALL (1.000 mẫu),0.97,0.9,978.96,6.94,Mạng nơ-ron biến phân 8 Qubit
-QNN (Tree Tensor + Angle),Quantum NN (VQC),SMALL (1.000 mẫu),0.97,0.9,3607.15,8.78,Mạng Tensor dạng cây
-QNN (Two-Local + ZZ Map),Quantum NN (VQC),SMALL (1.000 mẫu),0.92,0.83,2409.97,27.09,Bị suy giảm độ chính xác do nhiễu cổng CNOT
-QNN (Tree Tensor + ZZ Map),Quantum NN (VQC),SMALL (1.000 mẫu),0.92,0.83,2795.1,26.24,Cấu trúc cây kết hợp ZZ Map
-QNN (Two-Local + Amplitude),Quantum NN (VQC),SMALL (1.000 mẫu),0.43,0.3,125.96,6.13,"Mô hình thất bại hoàn toàn, không hội tụ"
+﻿Mô hình,Họ giải thuật,Tập dữ liệu,Số Qubit,Độ chính xác (Acc),Precision (Macro),Recall (Macro),F1-Score (Macro),F1 (Syn - Lớp 0),F1 (Benign - Lớp 1),ROC-AUC,Thời gian Huấn luyện (s),Thời gian Suy luận (s),Ghi chú
+Classical SVM (RBF),Classical ML,FULL (80k Train / 10k Test),0,0.9926,0.97,1.0,0.98,1.0,0.96,0.9954,0.98,0.13,"Mô hình cổ điển nhanh nhất, cân bằng hoàn hảo trên 100.000 mẫu"
+Classical ANN (MLP 8-8-16-8-1),Classical ML,FULL (80k Train / 10k Test),0,0.9941,0.97,0.99,0.98,1.0,0.97,0.9988,21.0,0.39,"Mạng nơ-ron sâu 361 tham số, đạt Accuracy và ROC-AUC cao nhất toàn bài báo"
+QSVM (Angle Embedding),Quantum SVM,SMALL (800 Train / 100 Test),8,0.99,0.95,0.99,0.97,0.99,0.95,0.9944,1265.59,1576.28,"Mô hình lượng tử xuất sắc nhất (mạch nông Depth=2, 0 CNOT, kháng nhiễu tốt nhất)"
+QSVM (Amplitude Embedding),Quantum SVM,SMALL (800 Train / 100 Test),3,0.97,0.93,0.89,0.91,0.98,0.84,0.8944,4432.02,5502.47,"Tiết kiệm qubit nhất (3 Qubit cho 8 chiều), nhưng tốn chi phí phân rã cổng khởi tạo"
+QSVM (ZZ Feature Map),Quantum SVM,SMALL (800 Train / 100 Test),8,0.97,0.98,0.85,0.9,0.98,0.82,0.85,18115.92,23312.32,"Mạch sâu 112 cổng CZ, chạy lâu nhất (>11 giờ tổng cộng cho Train + Test)"
+QNN (Two-Local + Angle),Quantum NN (VQC),SMALL (800 Train / 100 Test),8,0.97,0.98,0.85,0.9,0.98,0.82,0.9933,978.96,6.94,16 tham số RY + 7 CNOT; Suy luận cực nhanh (6.94s) nhờ không phải tính ma trận Kernel
+QNN (Tree-Tensor + Angle),Quantum NN (VQC),SMALL (800 Train / 100 Test),8,0.97,0.98,0.85,0.9,0.98,0.82,0.9956,3607.15,8.78,15 tham số cấu trúc cây phân cấp; đạt ROC-AUC cao nhất trong các mô hình lượng tử (0.9956)
+QNN (Two-Local + ZZ Map),Quantum NN (VQC),SMALL (800 Train / 100 Test),8,0.92,0.78,0.96,0.83,0.95,0.71,0.9889,2409.97,27.09,Độ sâu mạch lớn làm giảm Precision lớp Benign xuống 0.56 (nhiều cảnh báo giả)
+QNN (Tree-Tensor + ZZ Map),Quantum NN (VQC),SMALL (800 Train / 100 Test),8,0.92,0.78,0.96,0.83,0.95,0.71,0.9911,2795.1,26.24,Chứng minh hiệu năng QNN phụ thuộc vào Feature Map hơn là Ansatz (y hệt Two-Local + ZZ)
+QNN (Two-Local + Amplitude 3Q),Quantum NN (VQC),SMALL (800 Train / 100 Test),3,0.43,0.41,0.24,0.3,0.6,0.0,0.21,125.96,6.13,Sụp đổ do Barren Plateaus & mất thông tin biên độ (không phát hiện được mẫu Benign nào)
+QNN (Two-Local + Amplitude 4Q Padding),Quantum NN (VQC),SMALL (800 Train / 100 Test),4,0.9,0.45,0.5,0.47,0.95,0.0,0.7178,342.1,7.45,Bẫy Accuracy giả tạo (90%): Mô hình đoán tất cả là lớp đa số Syn (F1 lớp Benign = 0.00)
+QNN (Tree-Tensor + Amplitude 4Q Padding),Quantum NN (VQC),SMALL (800 Train / 100 Test),4,0.9,0.45,0.5,0.47,0.95,0.0,0.7678,418.5,8.12,Tương tự Two-Local 4Q: Rơi vào cực tiểu cục bộ lớp đa số do dữ liệu mất cân bằng 90:10

@@ -1,6 +1,8 @@
-Model,Type,Accuracy,Precision,Recall,F1-Score,Train Time (s),Inference Time (s)
-Classical SVM (RBF),Classical,0.98,0.9,0.9,0.9,0.006,0.0
-Classical ANN (MLP),Classical,0.99,0.9091,1.0,0.9524,0.195,0.0009
-QSVM (Angle Embedding),Quantum,0.97,0.8889,0.8,0.8421,95.326,64.1213
-QSVM (Amplitude Embedding),Quantum,0.97,0.8889,0.8,0.8421,1025.332,416.7945
-VQC (Two-Local QNN),Quantum,0.95,0.6667,1.0,0.8,28.662,1.0159
+﻿Model,Type,Qubits,Params/Gates,Accuracy,Precision (Macro),Recall (Macro),F1-Score (Macro),F1 (Benign),ROC-AUC,Train Time (s),Inference Time (s)
+Classical SVM (RBF),Classical,0,RBF Kernel,0.98,0.9891,0.9,0.9389,0.8889,1.0,0.0069,0.002
+Classical ANN (MLP),Classical,0,361 Weights,0.98,0.9891,0.9,0.9389,0.8889,0.9678,0.2517,0.001
+QSVM (Angle Embedding),Quantum SVM,8,"Depth=2, 0 CNOT",0.99,0.9945,0.95,0.9709,0.9474,1.0,29.4096,49.1983
+QSVM (Amplitude 3-Qubit),Quantum SVM,3,"Depth=18, 14 CNOT",0.83,0.6477,0.7722,0.6755,0.4516,0.7978,77.9077,130.8185
+QSVM (ZZ Feature Map),Quantum SVM,8,"Depth=88, 112 CZ",0.9,0.45,0.5,0.4737,0.0,0.7378,395.6689,662.2625
+QNN (Two-Local + Angle),Quantum NN,8,"16 Params, 7 CNOT",0.97,0.9035,0.9389,0.9202,0.8571,0.9956,17.3441,3.0365
+QNN (Tree-Tensor + Angle),Quantum NN,8,"15 Params, 7 CNOT",0.97,0.9035,0.9389,0.9202,0.8571,0.9956,12.96,1.2886
