@@ -56,10 +56,14 @@ Dự án đã được nâng cấp toàn diện để giải quyết trực ti�
 
 ```text
 qml-ddos/
+├── 01_train_models_qml_ddos.ipynb                 # [NOTEBOOK 1] Tiền xử lý PCA, Sơ đồ mạch, Huấn luyện 7 Model & Lưu trọng số
+├── 02_test_and_evaluate_qml_ddos.ipynb            # [NOTEBOOK 2] Nạp Model đã Train, Kiểm thử Độc lập & Vẽ Biểu đồ Đánh giá
+├── models/
+│   └── trained_qml_ddos_bundle.pkl                # Gói lưu trữ 7 mô hình, bộ chuẩn hóa PCA và trọng số góc quay lượng tử đã học
 ├── TAI_LIEU_LY_THUYET_DE_TAI_QML_DDOS.md           # Tài liệu lý thuyết, sơ đồ mạch, phân tích ưu/nhược từ A-Z
 ├── generate_quantum_circuits_and_paper_metrics.py # Script xuất 5 sơ đồ mạch lượng tử & bảng chỉ số 12 mô hình
 ├── export_paper_and_reproduction_benchmark.py     # Script xuất dữ liệu đối sánh chuẩn bài báo gốc
-├── run_benchmark_all.py                           # Pipeline chạy thực nghiệm 7 mô hình Binary + 4 mô hình Multiclass
+├── run_benchmark_all.py                           # Pipeline CLI chạy tự động 7 mô hình Binary + 4 mô hình Multiclass
 ├── run_dataset_preprocessing.py                   # Script tiền xử lý, chuẩn hóa MaxAbsScaler và PCA 8 chiều
 ├── download_syn_dataset.py                        # Script tải bộ dữ liệu gốc CICDDoS2019
 ├── dataset/                                       # Thư mục dữ liệu mẫu (tiny & small)
@@ -85,8 +89,17 @@ qml-ddos/
 
 ---
 
-## 4. Hướng Dẫn Chạy Thực Nghiệm
+## 4. Hướng Dẫn Chạy Thực Nghiệm (2 Chế Độ: Jupyter Notebook Tách Biệt hoặc CLI Tự Động)
 
+### Cách 1: Chạy Tương Tác Từng Bước Qua 2 File Jupyter Notebook (Khuyên dùng khi thuyết trình / demo)
+1. **Bước Huấn luyện (`01_train_models_qml_ddos.ipynb`):**
+   - Nạp dữ liệu huấn luyện `dataset/tr_day_syn_small.csv`, fit `MaxAbsScaler` và `PCA (80 -> 8 chiều)`.
+   - Vẽ trực tiếp sơ đồ mạch lượng tử, huấn luyện cả 7 mô hình và xuất gói trọng số ra `models/trained_qml_ddos_bundle.pkl`.
+2. **Bước Kiểm thử độc lập (`02_test_and_evaluate_qml_ddos.ipynb`):**
+   - Nạp trực tiếp model đã huấn luyện từ `models/trained_qml_ddos_bundle.pkl` (không cần train lại).
+   - Chạy kiểm thử trên tập `dataset/test_day_syn_small.csv`, xuất bảng chỉ số, Confusion Matrix và ROC-AUC ngay trên giao diện Notebook.
+
+### Cách 2: Chạy Tự Động Hóa Qua Command Line (CLI Script)
 ```bash
 # 1. Xuất toàn bộ sơ đồ mạch lượng tử và bảng chỉ số chuẩn 12 mô hình bài báo
 python export_paper_and_reproduction_benchmark.py
