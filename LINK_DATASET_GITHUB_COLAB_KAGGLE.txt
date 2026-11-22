@@ -1,0 +1,53 @@
+=====================================================================================
+DANH SACH DUONG DAN (LINKS) PHUC VU BAO CAO CUOI KY HOC PHAN MA HOA & MAT MA HOC
+=====================================================================================
+De tai 2.7: Benchmarking quantum machine learning for detecting DDoS cyber-attacks:
+            a NISQ-era evaluation
+Giang vien huong dan: PGS. TS. Nguyen Tan Khoi
+Nhom thuc hien (23Nh12):
+  1. Ngo Van Cong     - MSSV: 102230284
+  2. Nguyen Cong Minh - MSSV: 102230306
+-------------------------------------------------------------------------------------
+
+1. KHO MA NGUON CHINH THUC CUA NHOM (GITHUB PUBLIC REPOSITORY):
+   - Repo chinh:
+     https://github.com/vcongggggg/qml-ddos
+   - Lenh clone:
+     git clone https://github.com/vcongggggg/qml-ddos.git
+
+2. DUONG DAN MO VA CHAY TRUC TIEP TREN GOOGLE COLAB (KHONG CAN CAI DAT):
+   - Notebook 01 — Tien xu ly PCA 8 Qubits, So do mach & Huan luyen 7 Model (Train):
+     https://colab.research.google.com/github/vcongggggg/qml-ddos/blob/main/01_train_models_qml_ddos.ipynb
+
+   - Notebook 02 — Nap Model da Train, Kiem thu doc lap & Xuat bieu do chi so (Test):
+     https://colab.research.google.com/github/vcongggggg/qml-ddos/blob/main/02_test_and_evaluate_qml_ddos.ipynb
+
+3. DUONG DAN BO DU LIEU CHUAN QUOC TE CICDDOS2019 (DATASET):
+   - Trang chu chinh thuc Dai hoc New Brunswick (Canadian Institute for Cybersecurity - UNB):
+     https://www.unb.ca/cic/datasets/ddos-2019.html
+   - Ban guong tai nhanh tren Kaggle (CIC-DDoS2019 Dataset):
+     https://www.kaggle.com/datasets/dhoogla/cicddos2019
+   - Luu y: Cac tap du lieu mau da tien xu ly (tr_day_syn_small.csv, test_day_syn_small.csv,
+     tr_day_syn_tiny.csv, test_day_syn_tiny.csv) da duoc dong goi san trong thu muc
+     dataset/ cua kho GitHub va goi nen *.rar.wav de chay kiem thu ngay lap tuc.
+
+4. MA NGUON THAM KHAO GOC CUA TAC GIA BAI BAO:
+   - Ricardo S. Alonso et al. (ralorin/qml-ddos):
+     https://github.com/ralorin/qml-ddos
+
+5. DUONG DAN CAC BAI BAO KHOA HOC THAM KHAO CHINH (DOI / LITERATURE):
+   [1] Alonso et al. (2023) - Benchmarking QML for detecting DDoS cyber-attacks (NISQ):
+       https://github.com/ralorin/qml-ddos
+   [2] Havlicek et al. (2019) - Supervised learning with quantum-enhanced feature spaces (Nature):
+       https://doi.org/10.1038/s41586-019-0980-2
+   [3] McClean et al. (2018) - Barren plateaus in quantum neural network training landscapes (Nature Comm.):
+       https://doi.org/10.1038/s41467-018-07090-4
+   [4] Grant et al. (2018) - Hierarchical quantum classifiers / Tree-Tensor Networks (npj Quantum Inf.):
+       https://doi.org/10.1038/s41534-018-0116-9
+   [5] Schuld & Killoran (2019) - Quantum Machine Learning in Feature Hilbert Spaces (PRL):
+       https://doi.org/10.1103/PhysRevLett.122.040504
+   [6] Preskill (2018) - Quantum Computing in the NISQ era and beyond (Quantum):
+       https://doi.org/10.22331/q-2018-08-06-79
+   [7] Hadi et al. (2022) - Developing Realistic DDoS Dataset for ML-based IDS (IEEE IOTSMS):
+       https://doi.org/10.1109/IOTSMS58070.2022.10062052
+=====================================================================================
