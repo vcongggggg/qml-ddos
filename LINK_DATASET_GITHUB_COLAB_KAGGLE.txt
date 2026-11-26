@@ -31,11 +31,17 @@ Nhom thuc hien (23Nh12):
      tr_day_syn_tiny.csv, test_day_syn_tiny.csv) da duoc dong goi san trong thu muc
      dataset/ cua kho GitHub va goi nen *.rar.wav de chay kiem thu ngay lap tuc.
 
-4. MA NGUON THAM KHAO GOC CUA TAC GIA BAI BAO:
+4. SLIDE TRINH BAY TRUC TUYEN TREN CANVA:
+   - Link xem slide truc tuyen (View):
+     https://www.canva.com/d/soA80i0RoSUkoKt
+   - Link chinh sua chung (Edit):
+     https://www.canva.com/d/_2tWr78bUNI5eui
+
+5. MA NGUON THAM KHAO GOC CUA TAC GIA BAI BAO:
    - Ricardo S. Alonso et al. (ralorin/qml-ddos):
      https://github.com/ralorin/qml-ddos
 
-5. DUONG DAN CAC BAI BAO KHOA HOC THAM KHAO CHINH (DOI / LITERATURE):
+6. DUONG DAN CAC BAI BAO KHOA HOC THAM KHAO CHINH (DOI / LITERATURE):
    [1] Alonso et al. (2023) - Benchmarking QML for detecting DDoS cyber-attacks (NISQ):
        https://github.com/ralorin/qml-ddos
    [2] Havlicek et al. (2019) - Supervised learning with quantum-enhanced feature spaces (Nature):
